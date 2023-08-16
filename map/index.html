@@ -1,15 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 
 <head>
+    <meta charset="UTF-8">
     <title>Add Map</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./style.css" />
     
 </head>
 
 <body>
-
     <!--The div element for the map -->
     <div class="top_background"></div>
     <div class="main_window" id="main_window">
@@ -21,15 +23,12 @@
                 </div>
                 <p class="title1">지도보기</p>
             </div>
-            <div class="searchbar_container">
-                <div class="padding1"></div>
-                <div class="searchbar">
-                    <p class="searchbar_text">지역 또는 점포명을 검색하세요</p>
-                    <div class="search_img_container">
-                        <img src="./testmapmarkerimg/magnifying-glass.png" class="search_img" />
+                <div class="searchbar" id="search_input">
+                    <p class="searchbar_text" id="searchbar_text">지역 또는 점포명을 검색하세요</p>
+                    <div class="search_img_container" id="search_img_container">
+                        <img src="./testmapmarkerimg/magnifying-glass.png" class="search_img" id="search_img" />
                     </div>
                 </div>
-            </div>
         </div>
         <div id="map"></div>
 
