@@ -55,3 +55,12 @@ function click_to_map(){
 
 const click_login_button_action = document.getElementById("to_map");
 click_login_button_action.addEventListener("click", click_to_map);
+
+
+
+
+let element = document.getElementById("small_logo");
+let x = element.offsetLeft;
+let y = element.offsetTop;
+console.log("Element X: " + x);
+console.log("Element Y: " + y);
