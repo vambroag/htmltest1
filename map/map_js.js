@@ -1,5 +1,6 @@
 let map;
 let shopinfostatus = 0;
+let bookmark_status = 0;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -102,8 +103,8 @@ function initMap() {
       set_location_text.className = "set_location_text";
       set_location_text.innerText = "나의 위치로 설정";
       set_location.appendChild(set_location_text)
-                
-            
+
+
       const info_menu = document.createElement("div");
       info_menu.className = "info_menu";
       shop_info_container.appendChild(info_menu);
@@ -119,7 +120,7 @@ function initMap() {
       const info_menu_img_container1 = document.createElement("div");
       info_menu_img_container1.className = "info_menu_img_container";
       info_menu_content1.appendChild(info_menu_img_container1);
-      
+
       const info_menu_img1 = document.createElement("img");
       info_menu_img1.className = "info_menu_img";
       info_menu_img1.src = "./testmapmarkerimg/home.png";
@@ -129,7 +130,7 @@ function initMap() {
       info_menu_text1.className = "info_menu_text";
       info_menu_text1.innerText = "홈페이지";
       info_menu_content1.appendChild(info_menu_text1);
-                
+
       const line11 = document.createElement("div");
       line11.className = "line1";
       info_menu.appendChild(line11);
@@ -145,7 +146,7 @@ function initMap() {
       const info_menu_img_container2 = document.createElement("div");
       info_menu_img_container2.className = "info_menu_img_container";
       info_menu_content2.appendChild(info_menu_img_container2);
-      
+
       const info_menu_img2 = document.createElement("img");
       info_menu_img2.className = "info_menu_img";
       info_menu_img2.src = "./testmapmarkerimg/phone-receiver-silhouette.png";
@@ -154,8 +155,8 @@ function initMap() {
       const info_menu_text2 = document.createElement("p");
       info_menu_text2.className = "info_menu_text";
       info_menu_text2.innerText = "전화하기";
-      info_menu_content2.appendChild(info_menu_text2);  
-                
+      info_menu_content2.appendChild(info_menu_text2);
+
       const line12 = document.createElement("div");
       line12.className = "line1";
       info_menu.appendChild(line12);
@@ -171,7 +172,7 @@ function initMap() {
       const info_menu_img_container3 = document.createElement("div");
       info_menu_img_container3.className = "info_menu_img_container";
       info_menu_content3.appendChild(info_menu_img_container3);
-      
+
       const info_menu_img3 = document.createElement("img");
       info_menu_img3.className = "info_menu_img";
       info_menu_img3.src = "./testmapmarkerimg/chat.png";
@@ -189,16 +190,30 @@ function initMap() {
       const profile_image = document.createElement("img");
       profile_image.className = "profile_image";
       profile_img.appendChild(profile_image);
-            
+
       const bookmark_star = document.createElement("div");
       bookmark_star.className = "bookmark_star";
+      bookmark_star.id = "bookmark";
       shop_info_container.appendChild(bookmark_star);
 
       const bookmark_img = document.createElement("img");
       bookmark_img.className = "bookmark_img";
       bookmark_img.src = "./testmapmarkerimg/star.png"
+      bookmark_img.id = "bookmark_img";
       bookmark_star.appendChild(bookmark_img);
-        
+
+
+      const bookmark = document.getElementById("bookmark");
+      bookmark.addEventListener("click", () => {
+        const bookmark_star_img = document.getElementById("bookmark_img");
+        if(bookmark_status == 0){
+          bookmark_star_img.src = "./testmapmarkerimg/star1.png"
+          bookmark_status = 1;
+        } else {
+          bookmark_star_img.src = "./testmapmarkerimg/star.png"
+          bookmark_status = 0;
+        }
+      });
     });
 
     marker.setMap(map);
@@ -209,7 +224,7 @@ function initMap() {
 window.initMap = initMap;
 
 function map_action() {
-  if(shopinfostatus == 2){
+  if (shopinfostatus == 2) {
     const shop_info_container = document.getElementById("shop_info_container");
     shop_info_container.remove();
     shopinfostatus = 0;
