@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Add Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    
+</head>
+
+<body>
+
+    <!--The div element for the map -->
+    <div class="top_background"></div>
+    <div class="main_window" id="main_window">
+        <div class="top_container">
+            <div class="goback_container">
+                <div class="padding1"></div>
+                <div class="goback" id="go_back">
+                    <img src="./testmapmarkerimg/goback.png" class="goback_img"/>
+                </div>
+                <p class="title1">지도보기</p>
+            </div>
+            <div class="searchbar_container">
+                <div class="padding1"></div>
+                <div class="searchbar">
+                    <p class="searchbar_text">지역 또는 점포명을 검색하세요</p>
+                    <div class="search_img_container">
+                        <img src="./testmapmarkerimg/magnifying-glass.png" class="search_img" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="map"></div>
+
+
+<!-- hi -->
+    </div>
+    <!-- prettier-ignore -->
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPIfvcPxx3NbnMmOQjha88qVIx_Z_Qhjo&callback=initMap">
+        </script>
+    <script type="module" src="./map_js.js"></script>
+</body>
+
+</html>
