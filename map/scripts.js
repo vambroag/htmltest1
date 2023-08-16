@@ -1,5 +1,4 @@
 function click_to_main(){
-    const login_button = document.getElementById("go_back");
     location.replace('../main/mainpage.html')
   }
   

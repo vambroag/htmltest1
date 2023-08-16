@@ -208,8 +208,8 @@ function initMap() {
 
 window.initMap = initMap;
 
-function main_window_action() {
-  if(shopinfostatus == 3){
+function map_action() {
+  if(shopinfostatus == 2){
     const shop_info_container = document.getElementById("shop_info_container");
     shop_info_container.remove();
     shopinfostatus = 0;
@@ -218,5 +218,5 @@ function main_window_action() {
   console.log(shopinfostatus);
 }
 
-const main_window123 = document.getElementById("main_window");
-main_window123.addEventListener("click", main_window_action);
+const map123 = document.getElementById("map");
+map123.addEventListener("click", map_action);

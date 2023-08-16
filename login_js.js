@@ -142,7 +142,8 @@ function id_lose_focus() {
 function pw_lose_focus() {
     const pw_input = document.getElementById("created_pw_input");
     const input_pw_p = document.getElementById("input_pw_pretext");
-    if (pw_input && pw_input.value) {
+    if (pw_input  && pw_input.value) {
+        console.log(pw_input.value);
     } else {
         pw_input.remove();
         input_pw_p.style.display = "block";
@@ -151,7 +152,7 @@ function pw_lose_focus() {
 }
 
 function click_login_button(){
-    const login_button = document.getElementById("login_button");
+
     //홈화면으로 이동하기
     location.replace('./main/mainpage.html')
     //alert("홈화면으로 이동합니다!!!");

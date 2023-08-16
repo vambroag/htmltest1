@@ -49,7 +49,6 @@ slider.addEventListener('touchstart',startTouching,false);
 slider.addEventListener('touchend',stopTouching,false);
 
 function click_to_map(){
-  const login_button = document.getElementById("to_map");
   location.replace('../map/index.html')
 }
 
