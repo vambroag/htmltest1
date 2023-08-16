@@ -72,6 +72,10 @@ function initMap() {
       map: map,
     });
 
+    marker.addListener("click", () => {
+        location.replace('../map/index.html')
+    });
+
     marker.setMap(map);
   }
 }
